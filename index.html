@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <script>
+            function insert(num){
+                document.form.textview.value=document.form.textview.value+num;
+            }
+            function equal()
+            {
+                var exp=document.form.textview.value;
+                if(exp)
+                {
+                    document.form.textview.value=eval(exp);
+                }
+            }
+            function c()
+            {
+                 document.form.textview.value="";
+            }
+            function back()
+            {
+                var exp=document.form.textview.value;
+                document.form.textview.value=exp.substring(0,exp.length-1);
+            }
+        </script>
+        <style>
+            *{
+                margin: 0;
+                padding: 0;
+            }
+            .button{
+                width: 50px;
+                height: 50px;
+                font-size: 25px;
+                margin: 2px;
+                cursor: pointer;
+                background: #635c6b;
+                border: none;
+                color: white;
+            }
+            .textview{
+                width: 207px;
+                margin: 5px;
+                font-size: 25px;
+                padding: 5px;
+                border: none;
+                color: #1c1b40;
+            }
+            .main{
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translateX(-50%) translateY(-50%);
+            }
+            body{ 
+                background-color: #2c2435; 
+                height: 50%;
+            }
+            p{
+                        margin-left: 369px;
+    margin-top: 147px;
+    color: yellowgreen;
+            }
+           
+            
+        </style>
+    </head>
+    <body id="demo">
+        <div class="bg">
+            
+            
+            <p id="demo">CALCULATOR</p>
+            <br>
+
+       <button type="button" style="margin-left: 396px" onclick='document.getElementById("demo").innerHTML = "<p>Yo mAma YOU ARE LIKE HTML: Tiny head, huge body. <br> \n\
+                 what do think i am magician? <br> !!!!RELOAD!!!! <br> I JUST MAKE A CALCULATOR FOR YOU SO THAT U CAN CALCULATE YOUR MONEY AND SEND IT TO ME :p <br></p>"'>MAGIC</button>
+
+        </div>
+        <div class="main">
+            <form name="form">
+                <input class="textview" name="textview">
+            </form>
+            <table>
+                <tr>
+                    <td><input class="button" type="button" value="C" onclick="c()"></td>
+                    <td><input class="button" type="button" value="<" onclick="back()"></td>
+                    <td><input class="button" type="button" value="/" onclick="insert('/')"></td>
+                    <td><input class="button" type="button" value="x" onclick="insert('*')"></td>
+                </tr>
+                 <tr>
+                    <td><input class="button" type="button" value="7" onclick="insert(7)"></td>
+                    <td><input class="button" type="button" value="8" onclick="insert(8)"></td>
+                    <td><input class="button" type="button" value="9" onclick="insert(9)"></td>
+                    <td><input class="button" type="button" value="-" onclick="insert('-')"></td>
+                </tr>
+                 <tr>
+                    <td><input class="button" type="button" value="4" onclick="insert(4)"></td>
+                    <td><input class="button" type="button" value="5" onclick="insert(5)"></td>
+                    <td><input class="button" type="button" value="6" onclick="insert(6)"></td>
+                    <td><input class="button" type="button" value="+" onclick="insert('+')"></td>
+                </tr>
+                <tr>
+                    <td><input class="button" type="button" value="1" onclick="insert(1)"></td>
+                    <td><input class="button" type="button" value="2" onclick="insert(2)"></td>
+                    <td><input class="button" type="button" value="3" onclick="insert(3)"></td>
+                    <td rowspan="5"><input class="button" style="height:106px" type="button" value="=" onclick="equal()"></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><input class="button" style="width:106px" type="button" value="0" onclick="insert(0)"></td>
+                    <td><input class="button" type="button" value="." onclick="insert('.')"></td>
+                    
+                </tr>
+            </table>
+        </div>
+    </body>
+</html>
